@@ -7,7 +7,7 @@ réalisés en conditions candidat.
 | Test | Statut | Livrable | Retours QA |
 |---|---|---|---|
 | Conception applicative | Option A terminée | [Livrable](./Conception-applicative/ConceptionApplicative-A.md) | [QA](./Conception-applicative/QA.md) |
-| Note de cadrage | À faire | | |
+| Note de cadrage | Terminé | [Livrable](./Conception-noteDeCadrage/ConceptionNoteDeCadrage.md) | [QA](./Conception-noteDeCadrage/QA.md) | 
 | Docker Compose | À faire | | |
 | Modélisation rapide | À faire | | |
 
