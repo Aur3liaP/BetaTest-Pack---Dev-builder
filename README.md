@@ -13,4 +13,4 @@ réalisés en conditions candidat.
 
 ## Conditions de test
 - Durée réelle passée : En cours
-- Outils utilisés : Excalidraw, Mermaid
+- Outils utilisés : Excalidraw, Mermaid, Obsidian
