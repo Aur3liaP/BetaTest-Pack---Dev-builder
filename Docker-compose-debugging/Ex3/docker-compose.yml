@@ -1,5 +1,3 @@
-
-version: '3.8'
 services:
   mattermost:
     image: mattermost/mattermost-team-edition:latest
@@ -7,26 +5,45 @@ services:
       - "8065:8065"
     environment:
       - MM_SQLSETTINGS_DRIVERNAME=postgres
-      - MM_SQLSETTINGS_DATASOURCE=postgres://mattermost:password@postgres:5432/mattermost
-      - MM_SERVICESETTINGS_SITEURL=http://localhost:8065
+      - MM_SQLSETTINGS_DATASOURCE=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?sslmode=disable&connect_timeout=10
+      - MM_SERVICESETTINGS_SITEURL=${MM_SERVICESETTINGS_SITEURL}
     volumes:
       - mattermost_data:/mattermost/data
       - mattermost_logs:/mattermost/logs
       - mattermost_plugins:/mattermost/plugins
+      - mattermost_config:/mattermost/config
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - ex3_app-network
 
   postgres:
-    image: postgres:13
+    image: postgres:17
     environment:
-      - POSTGRES_USER=mattermost
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=mattermost
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - ex3_app-network
 
 volumes:
   mattermost_data:
   mattermost_logs:
   mattermost_plugins:
   postgres_data:
+  mattermost_config:
+
+networks:
+  ex3_app-network:
+    name: ex3_app-network
