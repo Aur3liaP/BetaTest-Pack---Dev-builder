@@ -1,0 +1,26 @@
+_format_version: "3.0"
+
+services:
+  - name: user-service
+    url: http://user-service:80
+    routes:
+      - name: users
+        paths:
+          - /api/users
+        strip_path: false
+
+  - name: product-service
+    url: http://product-service:80
+    routes:
+      - name: products
+        paths:
+          - /api/products
+        strip_path: false
+
+  - name: order-service
+    url: http://order-service:80
+    routes:
+      - name: orders
+        paths:
+          - /api/orders
+        strip_path: false
