@@ -8,7 +8,7 @@ réalisés en conditions candidat.
 |---|---|---|
 | Conception applicative | Option A terminée + début B | [Livrable](./Conception-applicative/ConceptionApplicative-A.md) | 
 | Note de cadrage | Terminé | [Livrable](./Conception-noteDeCadrage/ConceptionNoteDeCadrage.md) | 
-| Docker Compose | Commencé | |
+| Docker Compose | Terminé | [Livrable](./Docker-compose-debugging/DockerComposeDebugging.md) |
 | Modélisation rapide | À faire | |
 
 ## Conditions de test

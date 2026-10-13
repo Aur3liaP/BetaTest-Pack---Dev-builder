@@ -65,7 +65,6 @@ services:
     volumes:
       - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
       - /var/log:/var/log:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
     command: ["-e", "--strict.perms=false"]
     environment:
       - LOGSTASH_HOST=${LOGSTASH_HOST}
