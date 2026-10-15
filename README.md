@@ -9,8 +9,8 @@ réalisés en conditions candidat.
 | Conception applicative | Option A terminée + début B | [Livrable](./Conception-applicative/ConceptionApplicative-A.md) | 
 | Note de cadrage | Terminé | [Livrable](./Conception-noteDeCadrage/ConceptionNoteDeCadrage.md) | 
 | Docker Compose | Terminé | [Livrable](./Docker-compose-debugging/DockerComposeDebugging.md) |
-| Modélisation rapide | À faire | |
+| Modélisation rapide | Terminé | [Livrable](./Modélisation-rapide/Modélisation-rapide.md) |
 
 ## Conditions de test
-- Durée réelle passée : En cours
+- Durée réelle passée : Environ 28h
 - Outils utilisés : Excalidraw, Mermaid, Obsidian
